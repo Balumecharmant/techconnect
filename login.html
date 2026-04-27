@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body style="background:#0a0f1c;color:white;font-family:Poppins;text-align:center;padding-top:100px;">
+
+<h2>Connexion Admin</h2>
+
+<input id="email" placeholder="Email"><br><br>
+<input id="password" type="password" placeholder="Mot de passe"><br><br>
+
+<button onclick="login()">Se connecter</button>
+
+<p id="status"></p>
+
+<script>
+const supabaseClient = window.supabase.createClient(
+"https://mqchgzqpuxpvdsjusqlt.supabase.co",
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xY2hnenFwdXhwdmRzanVzcWx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyNjg5NDgsImV4cCI6MjA5Mjg0NDk0OH0.trJtWTciPNOHyzZFlBHrnoEVGwlh7fH474YGKfoER18"
+);
+
+async function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+    });
+
+    if (error) {
+        document.getElementById("status").innerText = "❌ " + error.message;
+    } else {
+        console.log("Utilisateur connecté :", data);
+        window.location.href = "dashboard.html";
+    }
+}
+</script>
+
+</body>
+</html>

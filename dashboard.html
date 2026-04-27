@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard TechConnect</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0f1c;
+    color: white;
+}
+
+header {
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 200px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin: 0;
+    color: #00d4ff;
+}
+
+.messages {
+    margin-top: 30px;
+}
+
+.message {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.message:hover {
+    transform: scale(1.02);
+}
+
+button {
+    background: linear-gradient(135deg, #ff4d4d, #ff0000);
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 TechConnect Dashboard</h1>
+    <p id="userEmail"></p>
+</header>
+
+<div class="container">
+
+<div class="stats">
+    <div class="card">
+        <h2 id="total">0</h2>
+        <p>Total Messages</p>
+    </div>
+
+    <div class="card">
+        <h2 id="today">0</h2>
+        <p>Aujourd’hui</p>
+    </div>
+</div>
+
+<input id="search" placeholder="🔍 Rechercher..." style="padding:10px;width:100%;margin-top:20px;">
+
+<div class="messages" id="messages"></div>
+
+<canvas id="chart" style="margin-top:30px;"></canvas>
+<button onclick="logout()">Se déconnecter</button>
+</div>
+
+<script>
+// 🔐 Connexion Supabase
+const supabaseClient = supabase.createClient(
+"https://mqchgzqpuxpvdsjusqlt.supabase.co",
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xY2hnenFwdXhwdmRzanVzcWx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyNjg5NDgsImV4cCI6MjA5Mjg0NDk0OH0.trJtWTciPNOHyzZFlBHrnoEVGwlh7fH474YGKfoER18"
+);
+// ✅ Vérifie session correctement
+async function checkAuth() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+
+    if (!session) {
+        window.location.href = "login.html";
+    } else {
+        console.log("Utilisateur connecté :", session.user.email);
+    }
+}
+
+checkAuth();
+
+// ✅ Écoute si utilisateur se déconnecte
+supabaseClient.auth.onAuthStateChange((event, session) => {
+    if (!session) {
+        window.location.href = "login.html";
+    }
+});
+// 🔐 Sécurité login
+
+
+let allMessages = [];
+
+// 📩 Charger dashboard
+async function loadDashboard() {
+
+    const { data } = await supabaseClient
+        .from("messages")
+        .select("*")
+        .order("id", { ascending: false });
+
+    if (!data) return;
+
+    allMessages = data;
+
+    // stats
+    document.getElementById("total").innerText = data.length;
+
+    const today = data.filter(m =>
+        new Date(m.created_at).toDateString() === new Date().toDateString()
+    );
+
+    document.getElementById("today").innerText = today.length;
+
+    displayMessages(data);
+    loadChart(data);
+}
+
+// 🔍 affichage messages
+function displayMessages(data) {
+
+    if (data.length === 0) {
+        document.getElementById("messages").innerHTML = "<p>Aucun message trouvé</p>";
+        return;
+    }
+
+    document.getElementById("messages").innerHTML =
+        data.map(m => `
+            <div class="message">
+                <b>${m.name}</b><br>
+                ${m.email}<br>
+                ${m.message}
+                <br><br>
+                <button onclick="deleteMsg(${m.id})">🗑 Supprimer</button>
+            </div>
+        `).join("");
+}
+
+// 🔍 recherche
+document.getElementById("search").addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+
+    const filtered = allMessages.filter(m =>
+        m.name.toLowerCase().includes(value) ||
+        m.email.toLowerCase().includes(value) ||
+        m.message.toLowerCase().includes(value)
+    );
+
+    displayMessages(filtered);
+});
+
+// 🗑 supprimer
+async function deleteMsg(id) {
+    if(confirm("⚠️ Tu es sûr de supprimer ce message ?")) {
+        await supabaseClient
+            .from("messages")
+            .delete()
+            .eq("id", id);
+
+        loadDashboard();
+    }
+}
+
+// 📊 graphique
+function loadChart(data) {
+
+    const dates = {};
+
+    data.forEach(m => {
+        const d = new Date(m.created_at).toLocaleDateString();
+        dates[d] = (dates[d] || 0) + 1;
+    });
+
+    new Chart(document.getElementById("chart"), {
+        type: "line",
+        data: {
+            labels: Object.keys(dates),
+            datasets: [{
+    label: "Messages",
+    data: Object.values(dates),
+    borderColor: "#00d4ff",
+    backgroundColor: "rgba(0,212,255,0.2)",
+    tension: 0.4
+}]
+        }
+    });
+}
+async function logout() {
+    await supabaseClient.auth.signOut();
+    window.location.href = "login.html";
+}
+async function showUser() {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+
+    if (user) {
+        document.getElementById("userEmail").innerText = user.email;
+    }
+}
+
+showUser();
+setInterval(loadDashboard, 5000);
+// 🚀 lancer
+loadDashboard();
+
+</script>
+
+</body>
+</html>
