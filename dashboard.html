@@ -97,11 +97,42 @@ button:hover {
 .container {
     animation: fadeIn 1s ease;
 }
+    @media (max-width: 768px) {
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}
 
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
