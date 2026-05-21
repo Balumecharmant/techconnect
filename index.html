@@ -535,6 +535,9 @@ header{
 padding:15px 0;
 }
 
+
+
+
 .logo{
 height:70px;
 }
@@ -590,9 +593,148 @@ font-size:38px;
 .contact-left h3{
 font-size:28px;
 }
-
+.about-content{
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
+.about-content h2{
+font-size:52px;
+line-height:1.2;
+margin-bottom:25px;
+background:linear-gradient(90deg,#ffffff,#00d4ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.about-content p{
+font-size:17px;
+line-height:2;
+opacity:0.85;
+}
+
+.about-card{
+margin-top:35px;
+background:rgba(255,255,255,0.06);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.about-card strong{
+font-size:18px;
+color:#00d4ff;
+}
+
+.card h3{
+margin-top:10px;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:15px;
+line-height:1.9;
+}
+
+.card:hover i{
+transform:scale(1.1);
+transition:0.4s ease;
+}
+
+@media(max-width:768px){
+
+.about-content h2{
+font-size:38px;
+text-align:center;
+}
+
+.about-content p{
+text-align:center;
+}
+
+.about-card{
+text-align:center;
+}
+
+}
+}
+.training-banner{
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.82)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+padding:80px 50px;
+border-radius:35px;
+margin-bottom:80px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 20px 80px rgba(0,0,0,0.35);
+}
+
+.training-banner h2{
+font-size:52px;
+line-height:1.2;
+margin-bottom:25px;
+background:linear-gradient(90deg,#ffffff,#00d4ff,#ff9800);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.training-banner p{
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:2;
+opacity:0.9;
+}
+
+.training-cta{
+margin-top:100px;
+text-align:center;
+background:rgba(255,255,255,0.05);
+padding:60px 40px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+}
+
+.training-cta h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.training-cta p{
+max-width:800px;
+margin:auto;
+line-height:2;
+opacity:0.85;
+margin-bottom:35px;
+}
+
+@media(max-width:768px){
+
+.training-banner{
+padding:50px 25px;
+}
+
+.training-banner h2{
+font-size:34px;
+}
+
+.training-banner p{
+font-size:16px;
+}
+
+.training-cta h2{
+font-size:32px;
+}
+
+}
 </style>
 </head>
 <body>
@@ -610,6 +752,7 @@ font-size:28px;
 <nav id="nav-menu">
 <a href="#home">Accueil</a>
 <a href="#services">Services</a>
+<a href="#formations">Formations</a>
 <a href="#details">Détails</a>
 <a href="#about">À propos</a>
 <a href="#contact">Contact</a>
@@ -687,6 +830,152 @@ Maintenance informatique, cybersécurité, gestion des systèmes et accompagneme
 
 </div>
 </section>
+<section class="section" id="formations">
+
+<div class="container">
+
+<div class="training-banner reveal">
+
+<h2>
+🚀 Développez vos compétences avec des formations adaptées aux réalités technologiques actuelles
+</h2>
+
+<p>
+Nous accompagnons particuliers, étudiants, entreprises et professionnels dans l’apprentissage et la maîtrise des outils numériques modernes grâce à des formations pratiques, professionnelles et orientées terrain.
+<br><br>
+Nos programmes sont conçus pour répondre aux besoins réels du marché et garantir une montée en compétence efficace.
+</p>
+
+</div>
+
+<div class="section-title">
+<span>Nos formations</span>
+<h2>Des compétences pratiques pour le monde numérique</h2>
+</div>
+
+<div class="cards">
+
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop" alt="Réseau Informatique">
+
+<i class="fa-solid fa-network-wired"></i>
+
+<h3>Réseau Informatique</h3>
+
+<p>
+Apprenez l’installation, la configuration et l’administration des réseaux informatiques modernes.
+Maîtrisez les équipements réseau, le partage sécurisé des données et les bases essentielles de l’infrastructure IT.
+</p>
+</div>
+
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1200&auto=format&fit=crop" alt="Suivi GPS">
+
+<i class="fa-solid fa-location-crosshairs"></i>
+
+<h3>Suivi GPS</h3>
+
+<p>
+Formation complète sur les systèmes de géolocalisation et de suivi GPS.
+Découvrez la gestion des véhicules, le tracking en temps réel et les solutions intelligentes de localisation.
+</p>
+</div>
+
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Assistance Systèmes">
+
+<i class="fa-solid fa-laptop-medical"></i>
+
+<h3>Assistance Systèmes</h3>
+
+<p>
+Initiez-vous à la maintenance informatique, au dépannage des systèmes, à l’installation logicielle et à l’assistance technique professionnelle.
+</p>
+</div>
+
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop" alt="Systèmes de Sécurité">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Systèmes de Sécurité</h3>
+
+<p>
+Pointage biométrique, gestion d’alarmes, gestion de présence et contrôle d’accès sécurisé pour entreprises, écoles et institutions.
+</p>
+</div>
+
+</div>
+
+<div class="section-title" style="margin-top:100px;">
+<span>Pourquoi nous choisir ?</span>
+<h2>Une approche professionnelle et moderne</h2>
+</div>
+
+<div class="cards">
+
+<div class="card reveal">
+<i class="fa-solid fa-user-graduate"></i>
+
+<h3>Formation pratique</h3>
+
+<p>
+Des formations orientées terrain avec des cas réels et des exercices pratiques adaptés aux réalités actuelles.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-microchip"></i>
+
+<h3>Technologies modernes</h3>
+
+<p>
+Nous utilisons des outils et équipements modernes afin de garantir une expérience professionnelle complète.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-headset"></i>
+
+<h3>Assistance technique</h3>
+
+<p>
+Notre équipe reste disponible pour accompagner les apprenants même après la formation.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Approche orientée résultats</h3>
+
+<p>
+Notre objectif est de transformer vos compétences en véritables opportunités professionnelles.
+</p>
+</div>
+
+</div>
+
+<div class="training-cta reveal">
+
+<h2>
+📞 Rejoignez-nous dès aujourd’hui
+</h2>
+
+<p>
+Investissez dans des compétences utiles, modernes et recherchées.
+Notre mission est de transformer la technologie en opportunité pour votre avenir.
+</p>
+
+<a href="#contact" class="btn-primary">
+<i class="fa-solid fa-paper-plane"></i>
+Commencer maintenant
+</a>
+
+</div>
+
+</div>
+</section>
 
 <section class="section">
 <div class="container">
@@ -758,6 +1047,11 @@ Nous accompagnons les entreprises dans leur transformation digitale grâce à de
 <section class="section" id="about">
 <div class="container">
 
+<div class="section-title">
+<span>À propos</span>
+<h2>Une startup tournée vers l'innovation</h2>
+</div>
+
 <div class="about-wrapper reveal">
 
 <div class="about-image">
@@ -765,23 +1059,68 @@ Nous accompagnons les entreprises dans leur transformation digitale grâce à de
 </div>
 
 <div class="about-content">
+
 <h2>
-Une vision moderne du digital
+Construire le futur digital avec passion
 </h2>
 
 <p>
-TechConnect est une startup spécialisée dans les solutions numériques, réseaux et télécommunications.
-Notre mission est d'aider les entreprises à évoluer grâce à des technologies modernes, fiables et performantes.
+TechConnect est une startup spécialisée dans les solutions numériques, les réseaux et les télécommunications modernes. 
+Nous accompagnons les entreprises, organisations et entrepreneurs dans leur transformation digitale grâce à des technologies innovantes, fiables et performantes.
 </p>
 
 <p>
-Nous combinons créativité, ingénierie et innovation afin de proposer des expériences digitales premium inspirées des standards internationaux.
+Notre équipe combine créativité, expertise technique et vision stratégique afin de créer des expériences digitales modernes adaptées aux réalités actuelles.
 </p>
 
 <div class="about-card">
 <strong>CEO — Ingénieur BALUME CHARMANT</strong>
 </div>
 
+</div>
+
+</div>
+
+<div class="cards" style="margin-top:80px;">
+
+<div class="card reveal">
+<i class="fa-solid fa-bullseye"></i>
+
+<h3>Notre Mission</h3>
+
+<p>
+Fournir des solutions digitales intelligentes, modernes et accessibles capables d'aider les entreprises et startups à accélérer leur croissance numérique avec efficacité et sécurité.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-eye"></i>
+
+<h3>Notre Vision</h3>
+
+<p>
+Devenir une référence africaine dans les solutions digitales, télécoms et technologiques en créant des innovations utiles pour les entreprises et les communautés.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-gem"></i>
+
+<h3>Nos Valeurs</h3>
+
+<p>
+Innovation, excellence, professionnalisme, créativité, engagement et collaboration sont les principes qui guident chacun de nos projets.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-earth-africa"></i>
+
+<h3>Impact Social</h3>
+
+<p>
+Nous croyons au développement numérique local à travers le partage des connaissances, l’accompagnement des jeunes talents et l’accès aux technologies modernes.
+</p>
 </div>
 
 </div>
