@@ -84,7 +84,7 @@
 
         /* --- LOGO OPTIMISÉ --- */
         .logo {
-            height: 200px;
+            height: 110px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
@@ -373,7 +373,7 @@
 
         /* --- FORMATIONS --- */
         .training-banner {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.82)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=70&w=800&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             padding: 80px 50px;
@@ -555,6 +555,34 @@
             background: rgba(0, 212, 255, 0.15);
             color: #00d4ff;
         }
+
+        /* LIENS RESEAUX SOCIAUX */
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-btn.whatsapp-color:hover { background: #25D366; color: white; transform: translateY(-3px); }
+        .social-btn.facebook-color:hover { background: #1877F2; color: white; transform: translateY(-3px); }
+        .social-btn.linkedin-color:hover { background: #0A66C2; color: white; transform: translateY(-3px); }
+        .social-btn.instagram-color:hover { background: #E1306C; color: white; transform: translateY(-3px); }
 
         .contact-form {
             background: rgba(255, 255, 255, 0.04);
@@ -745,7 +773,7 @@
             <div class="hero-content">
                 <p class="hero-subtitle">TechConnect Digital Agency</p>
                 <h1>Boostez votre entreprise avec des solutions digitales modernes et puissantes</h1>
-                <p>Nous développons des solutions web, réseaux, électricité industrielle et télécommunications innovantes pour propulser votre performance, sécurité et élégance.</p>
+                <p>We développons des solutions web, réseaux, électricité industrielle et télécommunications innovantes pour propulser votre performance, sécurité et élégance.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">
                         <i class="fa-solid fa-paper-plane"></i> Demander un devis
@@ -767,25 +795,25 @@
 
             <div class="cards">
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Développement Web">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Développement Web">
                     <h3>Développement Web</h3>
                     <p>Création de sites web modernes, ultra rapides, responsive et optimisés pour convertir vos visiteurs en clients.</p>
                 </div>
 
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="Réseaux et télécoms">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Réseaux et télécoms">
                     <h3>Réseaux & Télécoms</h3>
                     <p>Installation réseau, fibre optique, Wi-Fi professionnel, sécurité réseau et infrastructures télécom modernes.</p>
                 </div>
 
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" alt="Électricité générale bâtiment et industriel">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" alt="Électricité générale bâtiment et industriel">
                     <h3>Électricité Générale</h3>
                     <p>Infrastructures électriques pour bâtiments modernes et installations industrielles : sécurité, puissance et armoires automatisées.</p>
                 </div>
 
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop" alt="Solutions IT">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop" alt="Solutions IT">
                     <h3>Solutions IT</h3>
                     <p>Maintenance informatique, cybersécurité, gestion des systèmes et accompagnement digital pour entreprises.</p>
                 </div>
@@ -870,7 +898,7 @@
 
             <div class="training-cta reveal">
                 <h2>📞 Rejoignez-nous dès aujourd’hui</h2>
-                <p>Investissez dans des compétences utiles, modernes et recherchées. Our mission is to transformer la technologie en opportunité pour votre avenir.</p>
+                <p>Investissez dans des compétences utiles, modernes et recherchées. Notre mission est de transformer la technologie en opportunité pour votre avenir.</p>
                 <a href="#contact" class="btn-primary">
                     <i class="fa-solid fa-paper-plane"></i> Commencer maintenant
                 </a>
@@ -952,7 +980,7 @@
                     <p>TechConnect est une startup spécialisée dans les solutions numériques, les réseaux, l'électricité technologique et les télécommunications modernes. Nous accompagnons les entreprises, organisations et entrepreneurs dans leur transformation digitale grâce à des technologies innovantes, fiables et performantes.</p>
                     <p>Notre équipe combine créativité, expertise technique et vision stratégique afin de créer des expériences digitales modernes adaptées aux réalités actuelles.</p>
                     <div class="about-card">
-                        <strong>CEO — Ingénieur BALUME CHARMANT</strong>
+                        <strong>CEO — Enseignant & Ingénieur BALUME CHARMANT</strong>
                     </div>
                 </div>
             </div>
@@ -994,18 +1022,18 @@
 
             <div class="cards">
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop" alt="Électricité industrielle et domotique">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=600&auto=format&fit=crop" alt="Électricité industrielle et domotique">
                     <div class="blog-meta">
                         <span><i class="fa-solid fa-calendar"></i> Mai 2026</span>
                         <span><i class="fa-solid fa-tag"></i> Électricité</span>
                     </div>
                     <h3>Bâtiments modernes : Pourquoi passer à l'électricité intelligente ?</h3>
-                    <p>Découvrez comment l'installation d'armoires automatisées et d'un systeme électrique moderne réduit de 30% la consommation d'énergie de votre industrie tout en éliminant les risques de court-circuit.</p>
+                    <p>Découvrez comment l'installation d'armoires automatisées et d'un système électrique moderne réduit de 30% la consommation d'énergie de votre industrie tout en éliminant les risques de court-circuit.</p>
                     <a href="#contact" class="btn-link">Lire l'article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200&auto=format&fit=crop" alt="Formation tech">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" alt="Formation tech">
                     <div class="blog-meta">
                         <span><i class="fa-solid fa-calendar"></i> Avril 2026</span>
                         <span><i class="fa-solid fa-tag"></i> Formations</span>
@@ -1016,7 +1044,7 @@
                 </div>
 
                 <div class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Site internet conversion">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Site internet conversion">
                     <div class="blog-meta">
                         <span><i class="fa-solid fa-calendar"></i> Mars 2026</span>
                         <span><i class="fa-solid fa-tag"></i> Web</span>
@@ -1060,7 +1088,7 @@
             <div class="contact-wrapper reveal">
                 <div class="contact-left">
                     <h3>Parlons de votre projet</h3>
-                    <p>Notre équipe est disponible pour répondre à vos besoins et vous accompagner dans la réalisation de vos projets digitaux.</p>
+                    <p>Notre équipe est disponible pour répondre à vos besoins et vous accompagner dans la réalisation de vos projets digitaux et techniques.</p>
 
                     <div class="contact-info">
                         <div>
@@ -1077,9 +1105,19 @@
                         </div>
                     </div>
 
-                    <div class="hero-buttons" style="margin-top: 30px;">
-                        <a href="https://wa.me/25762642431" class="btn-primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
+                    <h4 style="margin-top:30px; font-size:16px; color:#00d4ff; text-transform:uppercase; letter-spacing:1px;">Suivez-nous :</h4>
+                    <div class="social-grid">
+                        <a href="https://wa.me/243984872805" class="social-btn whatsapp-color" target="_blank" title="WhatsApp TechConnect">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://facebook.com/techconnectgoma" class="social-btn facebook-color" target="_blank" title="Facebook TechConnect">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/techconnectgoma" class="social-btn linkedin-color" target="_blank" title="LinkedIn TechConnect">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/techconnectgoma" class="social-btn instagram-color" target="_blank" title="Instagram TechConnect">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -1103,7 +1141,7 @@
         <p>© 2026 TechConnect — Tous droits réservés.</p>
     </footer>
 
-    <a href="https://wa.me/25762642431" class="whatsapp" target="_blank">
+    <a href="https://wa.me/243984872805" class="whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
