@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechConnect | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+ 
+    <div id="particles-js"></div>
+ 
+    <header>
+        <div class="container nav">
+            <img src="images/logo.png" class="logo" alt="TechConnect Logo">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="formations.html">Formations</a>
+                <a href="details.html">Détails</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="active-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+ 
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span>Contact</span>
+                <h2>Démarrons votre projet</h2>
+            </div>
+ 
+            <div class="contact-wrapper reveal">
+                <div class="contact-left">
+                    <h3>Parlons de votre projet</h3>
+                    <p>Notre équipe est disponible pour répondre à vos besoins et vous accompagner dans la réalisation de vos projets digitaux et techniques.</p>
+ 
+                    <div class="contact-info">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Goma, RDC</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>contact.techconnect.rdc@gmail.com</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+243 984 872 805</span>
+                        </div>
+                    </div>
+ 
+                    <h4 style="margin-top:30px; font-size:16px; color:#00d4ff; text-transform:uppercase; letter-spacing:1px;">Suivez-nous :</h4>
+                    <div class="social-grid">
+                        <a href="https://wa.me/25762642431" class="social-btn whatsapp-color" target="_blank" title="WhatsApp TechConnect">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61563198312701" class="social-btn facebook-color" target="_blank" title="Facebook TechConnect">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/techconnectgoma" class="social-btn linkedin-color" target="_blank" title="LinkedIn TechConnect">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/techconnect.rdc" class="social-btn instagram-color" target="_blank" title="Instagram TechConnect">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+ 
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Votre nom" required>
+                        <input type="email" name="email" placeholder="Votre email" required>
+                        <textarea name="message" placeholder="Parlez-nous de votre projet..." required></textarea>
+                        <button type="submit" class="btn-primary">Envoyer le message</button>
+                        <p id="form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        <p>&copy; 2026 TechConnect — Tous droits réservés.</p>
+    </footer>
+ 
+    <script src="script.js"></script>
+</body>
+</html>

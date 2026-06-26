@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechConnect | Nos Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="container nav">
+            <img src="images/logo.png" class="logo" alt="TechConnect Logo">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="services.html" class="active-link">Services</a>
+                <a href="formations.html">Formations</a>
+                <a href="details.html">Détails</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section inner-page">
+        <div class="container">
+            <div class="section-title">
+                <span>Nos services</span>
+                <h2>Nos Expertises</h2>
+            </div>
+
+            <div class="cards">
+                <div class="card reveal">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Développement Web">
+                    <h3>Développement Web</h3>
+                    <p>Création de sites web modernes, ultra rapides, responsive et optimisés pour convertir vos visiteurs en clients.</p>
+                </div>
+
+                <div class="card reveal">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Réseaux et télécoms">
+                    <h3>Réseaux & Télécoms</h3>
+                    <p>Installation réseau, fibre optique, Wi-Fi professionnel, sécurité réseau et infrastructures télécom modernes.</p>
+                </div>
+
+                <div class="card reveal">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" alt="Électricité générale bâtiment et industriel">
+                    <h3>Électricité Générale</h3>
+                    <p>Infrastructures électriques pour bâtiments modernes et installations industrielles : sécurité, puissance et armoires automatisées.</p>
+                </div>
+
+                <div class="card reveal">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop" alt="Solutions IT">
+                    <h3>Solutions IT</h3>
+                    <p>Maintenance informatique, cybersécurité, gestion des systèmes et accompagnement digital pour entreprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TechConnect. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
