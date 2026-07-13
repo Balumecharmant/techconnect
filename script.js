@@ -88,3 +88,44 @@ if (document.getElementById('particles-js')) {
         "retina_detect": true
     });
 }
+
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+
+if (form) {
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault(); // Empêche la redirection de la page
+        
+        const data = new FormData(event.target);
+        
+        status.innerHTML = "Envoi en cours...";
+        status.style.color = "#00d4ff";
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                status.innerHTML = "Merci ! Votre message a été envoyé avec succès.";
+                status.style.color = "#00ff88";
+                form.reset(); // Vide les champs du formulaire
+            } else {
+                const result = await response.json();
+                if (Object.hasOwn(result, 'errors')) {
+                    status.innerHTML = result.errors.map(error => error.message).join(", ");
+                } else {
+                    status.innerHTML = "Oups ! Un problème est survenu lors de l'envoi.";
+                }
+                status.style.color = "#ff4a4a";
+            }
+        } catch (error) {
+            status.innerHTML = "Impossible d'envoyer le message. Vérifiez votre connexion.";
+            status.style.color = "#ff4a4a";
+        }
+    });
+}
